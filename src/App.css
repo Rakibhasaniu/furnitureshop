@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Anek+Gujarati:wght@100&family=Anek+Odia:wght@100;600&family=Beau+Rivage&family=Kanit:ital,wght@0,500;0,600;1,500&family=Oswald:wght@400;500;600;700&family=PT+Sans+Narrow:wght@700&family=Poppins&display=swap");
+
+/* font-family: 'Anek Gujarati', sans-serif;
+font-family: 'Anek Odia', sans-serif;
+font-family: 'Beau Rivage', cursive;
+font-family: 'Kanit', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'PT Sans Narrow', sans-serif; */
+
+/* color {
+    color: #003399;
+    color: #FFFFFF;
+    color: #3366CC;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-green {
+    color: rgb(5, 180, 165) !important;
+    z-index: 3000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Larg_Text {
+    font-family: 'PT Sans Narrow', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Small_Text {
+    font-family: 'Poppins', sans-serif;
+
 }
 
-.App-link {
-  color: #61dafb;
+.errorPage {
+    display: flex !important;
+    width: 100% !important;
+    height: 60vh !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: rgba(255, 255, 255, 0.742);
+    margin-top: 20%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Loding {
+    width: 100% !important;
+    height: 90vh !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.Loding img {
+    width: 8% !important;
+    height: 20% !important;
+}
+
+@media only screen and (max-width : 650px) {
+    .Loding img {
+        width: 15% !important;
+        height: 20% !important;
+    }
 }

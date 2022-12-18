@@ -1,0 +1,88 @@
+.allProduct .container-fluid {
+    width: 100% !important;
+    height: 8vh !important;
+    background-color: rgb(239, 239, 239);
+}
+
+.allProduct {
+    margin-top: 80px;
+    display: block !important;
+    justify-content: center !important;
+    padding-bottom: 5%;
+
+}
+
+
+
+/* =====product box========== */
+.allProduct .products-box {
+    flex-basis: 32%;
+    position: relative;
+    background: #f6f7fb;
+    padding-bottom: 10px;
+    transition: .3s;
+    margin-top: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+.allProduct .products-box img {
+    display: block;
+    width: 100% !important;
+    height: 60vh !important;
+    border-radius: 10px 10px 0 0;
+}
+
+.allProduct .p-top {
+    padding: 0 30px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.allProduct .p-top a {
+    color: #000;
+    transition: .3s;
+}
+
+.allProduct .products-box a:hover {
+    color: #009688;
+}
+
+.allProduct .p-bottom {
+    padding: 0 20px;
+    font-size: 15px;
+    color: #666666;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    transform: translateY(-10px);
+}
+
+.allProduct .p-bottom a {
+    color: #666666;
+}
+
+.allProduct .p-bottom .p-cart-link {
+    color: #009688;
+    transition: .3s;
+    font-weight: 600;
+}
+
+.allProduct .p-bottom .p-cart-link:hover {
+    color: #333;
+}
+
+.allProduct .products-box:hover {
+    transform: scale(1.1);
+
+}
+
+/* ---main hover effect------------ */
+.allProduct .products-box:hover .p-top {
+    transform: translateY(-20px);
+}
+
+.allProduct .products-box:hover .p-bottom {
+    visibility: visible;
+    opacity: 1;
+}
