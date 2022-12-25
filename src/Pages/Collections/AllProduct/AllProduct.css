@@ -28,23 +28,25 @@
 .allProduct .products-box img {
     display: block;
     width: 100% !important;
-    height: 60vh !important;
+    height: 40vh !important;
     border-radius: 10px 10px 0 0;
 }
 
 .allProduct .p-top {
-    padding: 0 30px;
+    padding: 0 10px;
     font-size: 18px;
     font-weight: 600;
     transition: .3s;
+    margin-top: 10px;
 }
 
-.allProduct .p-top a {
+.allProduct .p-top span {
     color: #000;
     transition: .3s;
+
 }
 
-.allProduct .products-box a:hover {
+.allProduct .products-box span:hover {
     color: #009688;
 }
 
@@ -58,8 +60,22 @@
     transform: translateY(-10px);
 }
 
-.allProduct .p-bottom a {
+.allProduct .p-bottom span {
     color: #666666;
+}
+
+.Prices {
+    color: #009688 !important;
+    font-family: 'Oswald', sans-serif;
+}
+
+.pointer {
+    cursor: pointer !important;
+}
+
+.Name {
+    color: #000000bb !important;
+    font-family: 'Oswald', sans-serif;
 }
 
 .allProduct .p-bottom .p-cart-link {
@@ -72,8 +88,12 @@
     color: #333;
 }
 
+.allProduct .products-box {
+    transition: all 0.1s ease-in-out;
+}
+
 .allProduct .products-box:hover {
-    transform: scale(1.1);
+    transform: scale(1.01);
 
 }
 
@@ -85,4 +105,12 @@
 .allProduct .products-box:hover .p-bottom {
     visibility: visible;
     opacity: 1;
+}
+
+/* Responsive */
+
+@media only screen and (max-width : 600px) {
+    .collections2022 {
+        font-size: 15px !important;
+    }
 }

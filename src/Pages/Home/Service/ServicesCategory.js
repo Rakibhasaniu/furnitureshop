@@ -11,6 +11,7 @@ import Home1 from '../../../Assent/Background Image/Home1.gif'
 import Home2 from '../../../Assent/Background Image/Home2.gif'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { Link } from 'react-router-dom';
 
 const ServicesCategory = () => {
     return (
@@ -30,177 +31,72 @@ const ServicesCategory = () => {
                     <div className="carousel-inner  ml-5">
                         <div className="carousel-item active ">
                             <div className="row container-fluid d-flex justify-content-center pl-5">
-                                <div className="col-lg-4 col-md-6 col-12">
-
-                                    <div className="products-box">
-                                        <img className='w-100' src={Bad} alt="" />
-                                        <div className="products-details">
-                                            <div className="p-top d-flex ">
-                                                <a className="d-block" href="#">Bolero Sofa</a>
-                                                <span className="d-block">$450.00</span>
-                                            </div>
-                                            <div className="p-bottom d-flex justify-content-between">
-                                                <div className="wrapper">
-                                                    <a className="cta bg-primary" href="#">
-                                                        <span className='text-white'>View Details</span>
-
-                                                    </a>
-                                                </div>
-                                                <div className="wrapper">
-                                                    <a className="cta" href="#">
-                                                        <span className='text-white'>Add to Card</span>
-
-                                                    </a>
-                                                </div>
-
-                                            </div>
+                                <div className="col-lg-4 col-md-6 col-12 mb-4">
+                                    <div className="d-block me-1">
+                                        <img className='productImg' src={Bad} alt="" />
+                                        <div className="d-flex justify-content-between mt-2 mx-1">
+                                            <h5 className='product_name'>Bed Collections</h5>
+                                            <Link to={'/cetagory-data/bed'} className='product_details'>Details</Link>
                                         </div>
                                     </div>
+
                                 </div>
-                                <div className="col-lg-4 col-md-6 col-12">
-
-                                    <div className="products-box">
-                                        <img className='w-100' src={Sofa} alt="" />
-                                        <div className="products-details">
-                                            <div className="p-top d-flex ">
-                                                <a className="d-block" href="#">Bolero Sofa</a>
-                                                <span className="d-block">$450.00</span>
-                                            </div>
-                                            <div className="p-bottom d-flex justify-content-between">
-                                                <div className="wrapper">
-                                                    <a className="cta bg-primary" href="#">
-                                                        <span className='text-white'>View Details</span>
-
-                                                    </a>
-                                                </div>
-                                                <div className="wrapper">
-                                                    <a className="cta" href="#">
-                                                        <span className='text-white'>Add to Card</span>
-
-                                                    </a>
-                                                </div>
-
-                                            </div>
+                                <div className="col-lg-4 col-md-6 col-12 mb-4">
+                                    <div className="d-block me-1">
+                                        <img className='productImg' src={Sofa} alt="" />
+                                        <div className="d-flex justify-content-between mt-2 mx-1">
+                                            <h5 className='product_name'>Sofa Collections</h5>
+                                            <Link to={'/cetagory-data/sofa'} className='product_details'>Details</Link>
                                         </div>
                                     </div>
+
                                 </div>
-                                <div className="col-lg-4 col-md-6 col-12">
-
-                                    <div className="products-box">
-                                        <img className='w-100' src={Gamming} alt="" />
-                                        <div className="products-details">
-                                            <div className="p-top d-flex ">
-                                                <a className="d-block" href="#">Bolero Sofa</a>
-                                                <span className="d-block">$450.00</span>
-                                            </div>
-                                            <div className="p-bottom d-flex justify-content-between">
-                                                <div className="wrapper">
-                                                    <a className="cta bg-primary" href="#">
-                                                        <span className='text-white'>View Details</span>
-
-                                                    </a>
-                                                </div>
-                                                <div className="wrapper">
-                                                    <a className="cta" href="#">
-                                                        <span className='text-white'>Add to Card</span>
-
-                                                    </a>
-                                                </div>
-
-                                            </div>
+                                <div className="col-lg-4 col-md-6 col-12 mb-4">
+                                    <div className="d-block me-1">
+                                        <img className='productImg' src={Gamming} alt="" />
+                                        <div className="d-flex justify-content-between mt-2 mx-1">
+                                            <h5 className='product_name'>Gamming Collections</h5>
+                                            <Link to={'/cetagory-data/gaming'} className='product_details'>Details</Link>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                         <div className="carousel-item  ">
                             <div className="row container-fluid d-flex justify-content-center pl-5">
-                                <div className="col-lg-4 col-md-6 col-12">
-
-                                    <div className="products-box">
-                                        <img className='w-100' src={Dyning} alt="" />
-                                        <div className="products-details">
-                                            <div className="p-top d-flex">
-                                                <a className="d-block" href="#">Bolero Sofa</a>
-                                                <span className="d-block">$450.00</span>
-                                            </div>
-                                            <div className="p-bottom d-flex justify-content-between">
-                                                <div className="wrapper">
-                                                    <a className="cta bg-primary" href="#">
-                                                        <span className='text-white'>View Details</span>
-
-                                                    </a>
-                                                </div>
-                                                <div className="wrapper">
-                                                    <a className="cta" href="#">
-                                                        <span className='text-white'>Add to Card</span>
-
-                                                    </a>
-                                                </div>
-
-                                            </div>
+                                <div className="col-lg-4 col-md-6 col-12 mb-4">
+                                    <div className="d-block me-1">
+                                        <img className='productImg' src={Dyning} alt="" />
+                                        <div className="d-flex justify-content-between mt-2 mx-1">
+                                            <h5 className='product_name'>Dining Collections</h5>
+                                            <Link to={'/cetagory-data/dining'} className='product_details'>Details</Link>
                                         </div>
                                     </div>
+
                                 </div>
-                                <div className="col-lg-4 col-md-6 col-12">
-
-                                    <div className="products-box">
-                                        <img className='w-100' src={Almary} alt="" />
-                                        <div className="products-details">
-                                            <div className="p-top d-flex ">
-                                                <a className="d-block" href="#">Bolero Sofa</a>
-                                                <span className="d-block">$450.00</span>
-                                            </div>
-                                            <div className="p-bottom d-flex justify-content-between">
-                                                <div className="wrapper">
-                                                    <a className="cta bg-primary" href="#">
-                                                        <span className='text-white'>View Details</span>
-
-                                                    </a>
-                                                </div>
-                                                <div className="wrapper">
-                                                    <a className="cta" href="#">
-                                                        <span className='text-white'>Add to Card</span>
-
-                                                    </a>
-                                                </div>
-
-                                            </div>
+                                <div className="col-lg-4 col-md-6 col-12 mb-4">
+                                    <div className="d-block me-1">
+                                        <img className='productImg' src={Almary} alt="" />
+                                        <div className="d-flex justify-content-between mt-2 mx-1">
+                                            <h5 className='product_name'>Almary Collections</h5>
+                                            <Link to={'/cetagory-data/almary'} className='product_details'>Details</Link>
                                         </div>
                                     </div>
+
                                 </div>
-                                <div className="col-lg-4 col-md-6 col-12">
-
-                                    <div className="products-box">
-                                        <img className='w-100' src={Dolpon} alt="" />
-                                        <div className="products-details">
-                                            <div className="p-top d-flex ">
-                                                <a className="d-block" href="#">Bolero Sofa</a>
-                                                <span className="d-block">$450.00</span>
-                                            </div>
-                                            <div className="p-bottom d-flex justify-content-between">
-                                                <div className="wrapper">
-                                                    <a className="cta bg-primary" href="#">
-                                                        <span className='text-white'>View Details</span>
-
-                                                    </a>
-                                                </div>
-                                                <div className="wrapper">
-                                                    <a className="cta" href="#">
-                                                        <span className='text-white'>Add to Card</span>
-
-                                                    </a>
-                                                </div>
-
-                                            </div>
+                                <div className="col-lg-4 col-md-6 col-12 mb-4">
+                                    <div className="d-block me-1">
+                                        <img className='productImg' src={Dolpon} alt="" />
+                                        <div className="d-flex justify-content-between mt-2 mx-1">
+                                            <h5 className='product_name'>Mirror Collections</h5>
+                                            <Link to={'/cetagory-data/mirror'} className='product_details'>Details</Link>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
-
-
-
 
                     </div>
                     <div className="flex smalldiv">
@@ -235,7 +131,7 @@ const ServicesCategory = () => {
 
                 </div>
             </section>
-            {/* ============================== Home Decoretion ========================== */}
+            {/* ==============================Full Home Decoretion ========================== */}
             <section className="FullHome_Decoretion">
                 <div className="container">
                     <h1 className="text-center Larg_Text py-2">Full Home Decoration Services</h1>
@@ -252,7 +148,7 @@ const ServicesCategory = () => {
                                 </PhotoProvider>
 
                                 <div className="products-details">
-                                    <div className="p-top d-flex  justify-content-between pt-2">
+                                    <div className="px-2 d-flex justify-content-between pt-2  justify-content-between pt-2">
                                         <h4 className='texts'>Home Service 7</h4>
                                         <button className='service_7'> Details</button>
                                     </div>
@@ -269,7 +165,7 @@ const ServicesCategory = () => {
                                 </PhotoProvider>
 
                                 <div className="products-details">
-                                    <div className="p-top d-flex  justify-content-between pt-2">
+                                    <div className="px-2 d-flex justify-content-between pt-2  justify-content-between pt-2">
                                         <h4 className='texts'>Home Service 10</h4>
                                         <button className='service_7'>Details</button>
                                     </div>
@@ -291,7 +187,7 @@ const ServicesCategory = () => {
                         <div className="col-lg-2 col-md-2 col-sm-4 col-4"><img className='client_img' src="https://assets.website-files.com/6193af0ab299822fd9049e56/62826d3780fd1ce1f6cc6632_lav-logo.png" alt="" /></div>
                         <div className="col-lg-2 col-md-2 col-sm-4 col-4"><img className='client_img' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_GfXZyhnwhzohp4dKVlQ30L8SEYOF4PGJpA&usqp=CAU" alt="" /></div>
                         <div className="col-lg-2 col-md-2 col-sm-4 col-4"><img className='client_img' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTObXMBx6HfDXZ8G3Hk7fm2KGiS_mR4AWshog&usqp=CAU" alt="" /></div>
-                        <div className="col-lg-2 col-md-2 col-sm-4 col-4"><img className='client_img' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTObXMBx6HfDXZ8G3Hk7fm2KGiS_mR4AWshog&usqp=CAU" alt="" /></div>
+                        <div className="col-lg-2 col-md-2 col-sm-4 col-4"><img className='client_img' src="https://static.vecteezy.com/system/resources/thumbnails/007/796/631/small_2x/furniture-logo-furniture-logo-outline-free-vector.jpg" alt="" /></div>
                     </div>
                 </div>
 
@@ -303,9 +199,9 @@ const ServicesCategory = () => {
                     <div className="products-box">
                         <img className='w-100' src={Sofa} alt="" />
                         <div className="products-details">
-                            <div className="p-top d-flex ">
+                            <div className="p-top d-flex justify-content-between pt-2 ">
                                 <a className="d-block" href="#">Bolero Sofa</a>
-                                <span className="d-block">$450.00</span>
+                                <span className="d-block">Details</span>
                             </div>
                             <div className="p-bottom d-flex justify-content-between">
                                 <div className="wrapper">
@@ -330,9 +226,9 @@ const ServicesCategory = () => {
                     <div className="products-box">
                         <img className='w-100' src={image3} alt="" />
                         <div className="products-details">
-                            <div className="p-top d-flex ">
+                            <div className="p-top d-flex justify-content-between pt-2 ">
                                 <a className="d-block" href="#">Bolero Sofa</a>
-                                <span className="d-block">$450.00</span>
+                                <span className="d-block">Details</span>
                             </div>
                             <div className="p-bottom d-flex justify-content-between">
                                 <div className="wrapper">

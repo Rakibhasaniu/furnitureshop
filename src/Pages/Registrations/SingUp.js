@@ -103,9 +103,9 @@ const SingUp = () => {
     return (
         <>
             <div className="SingUp">
-                <div class="wrapperss">
+                <div className="wrapperss">
                     <div className='d-block'>
-                        <div type='formFile' class="logoss">
+                        <div type='formFile' className="logoss">
                             <img type='formFile' src="https://w7.pngwing.com/pngs/627/693/png-transparent-computer-icons-user-user-icon-thumbnail.png" alt="" />
                             <input name='img' className="form-control mt-3" type="file"
                                 {...register("img",
@@ -114,13 +114,13 @@ const SingUp = () => {
                                     }
                                 )} id="formFile" required />
                         </div>
-                        <div class="text-center mt-4 name">
+                        <div className="text-center mt-4 name">
                             User Profile photo
                         </div>
 
-                        <form onSubmit={handleSubmit(onSubmit)} class="p-3 mt-3">
-                            <div class="form-field d-flex align-items-center">
-                                <span class="far fa-user"></span>
+                        <form onSubmit={handleSubmit(onSubmit)} className="p-3 mt-3">
+                            <div className="form-field d-flex align-items-center">
+                                <span className="far fa-user"></span>
                                 <input type="text" name="userName"
                                     {...register("userName",
                                         {
@@ -131,8 +131,8 @@ const SingUp = () => {
                                     id="userName" placeholder="Username" required />
                             </div>
 
-                            <div class="form-field d-flex align-items-center">
-                                <span class="far fa-user"></span>
+                            <div className="form-field d-flex align-items-center">
+                                <span className="far fa-user"></span>
                                 <input type="email" name="email"
                                     {...register("email",
                                         {
@@ -142,8 +142,8 @@ const SingUp = () => {
                                     )}
                                     id="userEmail" placeholder="Username" required />
                             </div>
-                            <div class="form-field d-flex align-items-center">
-                                <span class="fas fa-key"></span>
+                            <div className="form-field d-flex align-items-center">
+                                <span className="fas fa-key"></span>
                                 <input type="password" name="password"
                                     {...register("password",
                                         {
@@ -168,7 +168,7 @@ const SingUp = () => {
                             {/* --------error massage end---------- */}
                             <input className='btn mt-3' type="submit" />
                         </form>
-                        <div class="text-center fs-6">
+                        <div className="text-center fs-6">
                             <button className='googleBtn'> <FaGoogle /> Google</button> or <Link to={`/login`} > <button className='googleBtn'> Login</button></Link>
                         </div>
                     </div>

@@ -64,20 +64,20 @@ const LogIn = () => {
     return (
         <>
             <div className="SingUp">
-                <div class="wrapperss ">
+                <div className="wrapperss ">
                     <div className='d-block'>
-                        <div class="logoss">
+                        <div className="logoss">
                             <img type='formFile' src="http://localhost:3000/static/media/logo.186730c98810fd2c5d6e.gif" alt="" />
 
                         </div>
-                        <div class="text-center mt-4 name">
+                        <div className="text-center mt-4 name">
                             Welcome
                         </div>
 
-                        <form onSubmit={handleSubmit(onSubmit)} class="p-3 mt-3">
+                        <form onSubmit={handleSubmit(onSubmit)} className="p-3 mt-3">
 
-                            <div class="form-field d-flex align-items-center">
-                                <span class="far fa-user"></span>
+                            <div className="form-field d-flex align-items-center">
+                                <span className="far fa-user"></span>
                                 <input type="email" name="email"
                                     {...register("email",
                                         {
@@ -87,8 +87,8 @@ const LogIn = () => {
                                     )}
                                     id="userEmail" placeholder="Username" required />
                             </div>
-                            <div class="form-field d-flex align-items-center">
-                                <span class="fas fa-key"></span>
+                            <div className="form-field d-flex align-items-center">
+                                <span className="fas fa-key"></span>
                                 <input type="password" name="password"
                                     {...register("password",
                                         {
@@ -99,7 +99,7 @@ const LogIn = () => {
                                     )}
                                     id="pwd" placeholder="Password" required />
                             </div>
-                            <div class="text-center fs-6">
+                            <div className="text-center fs-6">
                                 <a href="#">Forget password?</a>
                             </div>
 
@@ -107,7 +107,7 @@ const LogIn = () => {
                             <input className='btn mt-3' type="submit" />
                         </form>
 
-                        <div class="text-center fs-6">
+                        <div className="text-center fs-6">
                             <button onClick={autoSingInGoogle} className='googleBtn'> <FaGoogle /> Google</button> or <Link to={`/singup`} > <button className='googleBtn'> Sing up</button></Link>
                         </div>
                     </div>

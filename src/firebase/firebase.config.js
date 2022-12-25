@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCY4tm7J77twPPJ7Nrjk91Ia3JNDb71uII",
-    authDomain: "fresh-furniture-db.firebaseapp.com",
-    projectId: "fresh-furniture-db",
-    storageBucket: "fresh-furniture-db.appspot.com",
-    messagingSenderId: "860145144571",
-    appId: "1:860145144571:web:bc9359088041e19ce8d65e"
+    apiKey: "AIzaSyCgAsRQJ-WUHGxqKGDeX-73nZv-YX9iJ90",
+    authDomain: "furniture-collections-bd977.firebaseapp.com",
+    projectId: "furniture-collections-bd977",
+    storageBucket: "furniture-collections-bd977.appspot.com",
+    messagingSenderId: "620809491059",
+    appId: "1:620809491059:web:be06a51cee22c9d27d5006"
 };
 
 // Initialize Firebase
