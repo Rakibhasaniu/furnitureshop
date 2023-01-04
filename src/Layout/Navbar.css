@@ -1,11 +1,24 @@
 .navbar {
-    background-color: #00000038 !important;
+    background-color: #070127 !important;
     position: fixed !important;
     top: 0;
     z-index: 4000 !important;
     width: 100% !important;
     color: #e3a300;
     padding: 10px 5px !important;
+}
+
+.cardnotification {
+    bottom: 15px !important;
+    left: 80px !important;
+}
+
+@media screen and (max-width : 1060px) and (min-width : 980px) {
+    .navbar a {
+        color: #ffffffec;
+        font-size: 15px !important;
+
+    }
 }
 
 /* font-family: 'Anek Gujarati', sans-serif;
@@ -73,16 +86,16 @@ font-family: 'PT Sans Narrow', sans-serif; */
 
 }
 
-.MainDiv #loginBtn {
+#loginBtn {
     padding-top: 7px;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 1px;
     border-radius: 5px !important;
     position: relative !important;
-    top: 5px !important;
-    margin-right: 5px !important;
-
+    top: 15px !important;
+    margin-top: 15px !important;
+    background-color: #005830;
 }
 
 .navbar-toggler {
@@ -114,6 +127,6 @@ font-family: 'PT Sans Narrow', sans-serif; */
 }
 
 #loginBtn:hover {
-    color: rgb(0, 224, 22) !important;
+    color: rgb(255, 255, 255) !important;
 
 }

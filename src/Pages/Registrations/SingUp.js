@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import './SingUp.css'
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../AuthContext/UserContext';
 import { toast } from 'react-toastify';
@@ -12,7 +12,10 @@ const SingUp = () => {
     // ---image bb key--
     const imageHostKey = process.env.REACT_APP_image_apikye;
 
-
+    //location part 
+    const navigat = useNavigate()
+    const location = useLocation()
+    const prevLocation = location?.state?.from?.pathname || '/';
 
     // -------------form information ----------------
     const onSubmit = data => {
@@ -66,6 +69,8 @@ const SingUp = () => {
                 }
             })
 
+
+
         //user create email or password sing up
 
         // singUpUser(email, password)
@@ -98,6 +103,17 @@ const SingUp = () => {
         //     })
 
 
+    }
+    // Google sing in outo
+    const autoSingInGoogle = () => {
+        autoGoogleLogin()
+            .then(result => {
+                console.log(result?.user?.email);
+                // setLogInUserEmail(result?.user?.email)
+
+                toast.success('User Auto Login With Google !')
+                navigat(prevLocation, { replace: true })
+            }).catch(err => console.log(err))
     }
 
     return (
@@ -169,7 +185,7 @@ const SingUp = () => {
                             <input className='btn mt-3' type="submit" />
                         </form>
                         <div className="text-center fs-6">
-                            <button className='googleBtn'> <FaGoogle /> Google</button> or <Link to={`/login`} > <button className='googleBtn'> Login</button></Link>
+                            <button onClick={autoSingInGoogle} className='googleBtn'> <FaGoogle /> Google</button> or <Link to={`/login`} > <button className='googleBtn'> Login</button></Link>
                         </div>
                     </div>
                 </div>

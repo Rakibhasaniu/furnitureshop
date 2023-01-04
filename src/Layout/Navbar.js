@@ -6,6 +6,7 @@ import logo from '../Assent/logo/logo.gif'
 import { FaAlignLeft, FaBars } from 'react-icons/fa';
 import { AuthContext } from '../AuthContext/UserContext';
 import { toast } from 'react-toastify';
+import AddCard from '../Pages/AddCard/AddCard';
 
 const Navbar = () => {
 
@@ -28,27 +29,10 @@ const Navbar = () => {
                     <Link to={'/'} className="logo " ><img src='https://cdn.dribbble.com/users/56251/screenshots/1228786/couch-dribbbs.gif' alt="" /></Link>
 
                     <div className="MainDiv d-lg-none">
-                        <div className="row pe-4">
+                        <div className="row">
 
-                            {
-                                !user?.email ? <>
-                                    <div id='colBtn' className="col-6">
-                                        <div id="MainloginBtn">
-                                            <Link id='loginBtn' to={"/"} className="bg-primary nav-links d-lg-none">Login</Link>
-                                        </div>
-                                    </div>
-                                </>
-                                    :
-                                    <>
-                                        <div id='colBtn' className="col-6">
-                                            <div id="MainloginBtn">
-                                                <Link id='loginBtn' to={"/"} className="bg-primary nav-links d-lg-none">Logout</Link>
-                                            </div>
-                                        </div>
-                                    </>
-                            }
-                            <div className="col-6">
-                                <button className="navbar-toggler me-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <div className="me-1">
+                                <button className="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="navbar-toggler-icon"><FaAlignLeft className='textToggle' /></span>
                                 </button>
                             </div>
@@ -70,43 +54,54 @@ const Navbar = () => {
                                 <Link to={"/"} className="nav-links">Admin Bord</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to={"/"} className="nav-links">About</Link>
+                                <Link to={"/contact"} className="nav-links">Contact </Link>
+
                             </li>
-                            <li className="nav-item">
-                                <Link to={"/"} className="nav-links">Contact</Link>
+                            <li className="nav-item" >
+                                <Link to={"/add-Card"} className="nav-links position-relative me-3">
+                                    Add Card
+                                    <span class="cardnotification position-absolute start-100 translate-middle badge rounded-pill bg-danger">
+                                        9+
+
+                                    </span>
+                                </Link>
+                                {/* <Link to={"/add-Card"} className="nav-links">Add Card</Link> */}
                             </li>
 
                             {
                                 !user?.email ? <>
-                                    <li className="nav-item">
-                                        <Link id='loginBtn' to={"/singup"} className="bg-primary  d-none d-lg-flex">Login</Link>
+                                    <li className="nav-item mt-4 mt-lg-0">
+                                        <Link id='loginBtn' to={"/singup"} className="">Login</Link>
                                     </li>
+
                                 </>
                                     :
                                     <>
-                                        <li className="nav-item">
-                                            <Link id='loginBtn' onClick={Logout} to={""} className="bg-primary  d-none d-lg-flex">Log out</Link>
+                                        <li className="nav-item mt-4 mt-lg-0">
+                                            <Link id='loginBtn' onClick={Logout} to={""} className="">Log out</Link>
                                         </li>
                                     </>
                             }
-                            {
-                                user?.email ? <>
-                                    <div className="nav-item ms-3 mt-2 ms-lg-0 mt-lg-0">
-                                        <div className="profile">
-                                            <img className='protfolioimg img-fluid' src={user?.photoURL} alt="" />
+                            <div className="d-none d-lg-block">
+                                {
+                                    user?.email ? <>
+                                        <div className="nav-item ms-3 mt-2 ms-lg-0 mt-lg-0">
+                                            <div className="profile">
+                                                <img className='protfolioimg img-fluid' src={user?.photoURL} alt="" />
+                                            </div>
+
+                                        </div>
+                                    </>
+                                        :
+                                        <div className="nav-item ms-3 mt-2 ms-lg-0 mt-lg-0">
+                                            <div className="profile">
+                                                <img className='protfolioimg img-fluid' src=' https://w7.pngwing.com/pngs/627/693/png-transparent-computer-icons-user-user-icon-thumbnail.png' alt="" />
+                                            </div>
+
                                         </div>
 
-                                    </div>
-                                </>
-                                    :
-                                    <div className="nav-item ms-3 mt-2 ms-lg-0 mt-lg-0">
-                                        <div className="profile">
-                                            <img className='protfolioimg img-fluid' src=' https://w7.pngwing.com/pngs/627/693/png-transparent-computer-icons-user-user-icon-thumbnail.png' alt="" />
-                                        </div>
-
-                                    </div>
-
-                            }
+                                }
+                            </div>
 
 
 
@@ -116,6 +111,8 @@ const Navbar = () => {
 
                 </div>
             </nav>
+
+
         </>
     );
 };

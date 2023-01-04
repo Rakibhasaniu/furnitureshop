@@ -12,6 +12,7 @@ import Home2 from '../../../Assent/Background Image/Home2.gif'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
+import About from '../About/About';
 
 const ServicesCategory = () => {
     return (
@@ -138,7 +139,7 @@ const ServicesCategory = () => {
                     <h6 className="text-center Small_Text px-5 pb-4">Use the following content marketing tips to strengthen <br></br>your online presence as a home décor brand.</h6>
 
                     <div className="row container-fluid d-flex justify-content-center">
-                        <div className="col-lg-6 col-md-6 col-12">
+                        <div className="col-lg-4 col-md-6 col-12">
 
                             <div className="products-boxs">
                                 <PhotoProvider>
@@ -155,7 +156,26 @@ const ServicesCategory = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-6 col-md-6 col-12">
+
+                        <div className="col-lg-4 col-md-6 col-12">
+
+                            <div className="products-boxs">
+                                <PhotoProvider>
+                                    <PhotoView src='https://mydecorative.com/wp-content/uploads/2019/04/living-room-furniture.gif'>
+                                        <img className='w-100' src='https://mydecorative.com/wp-content/uploads/2019/04/living-room-furniture.gif' alt="" />
+                                    </PhotoView>
+                                </PhotoProvider>
+
+                                <div className="products-details">
+                                    <div className="px-2 d-flex justify-content-between pt-2  justify-content-between pt-2">
+                                        <h4 className='texts'>Home Service 7</h4>
+                                        <button className='service_7'> Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-4 col-md-6 col-12">
 
                             <div className="products-boxs my-sm-3 my-md-0">
                                 <PhotoProvider>
@@ -173,9 +193,12 @@ const ServicesCategory = () => {
                             </div>
                         </div>
 
+
                     </div>
                 </div>
             </section>
+            {/* ==========About section========== */}
+
 
             <section className="Our_client pb-2 pt-5">
                 <h1 className="text-center Larg_Text py-0">Our Best Clients</h1>

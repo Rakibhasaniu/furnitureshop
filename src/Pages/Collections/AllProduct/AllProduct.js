@@ -4,6 +4,8 @@ import Sofa from '../../../Assent/img/asset 8.jpeg'
 import { useQuery } from '@tanstack/react-query';
 import { async } from '@firebase/util';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { FaList } from 'react-icons/fa';
 
 const AllProduct = () => {
 
@@ -29,6 +31,28 @@ const AllProduct = () => {
             </div>
         </div>
     }
+    //=============MongoDb post Add to Card==========================
+    const AddToCard = (product) => {
+
+        fetch(`http://localhost:5000/addCard`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+
+            },
+            body: JSON.stringify(product)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data?.acknowledged) {
+                    toast.success('Add to Card FaList', data)
+                }
+            })
+
+    }
+
+
+
     // console.log(products);
     return (
         <>
@@ -41,6 +65,12 @@ const AllProduct = () => {
                     </form>
 
                 </div>
+                <div className="d-flex justify-content-center ">
+                    <marquee className='marquees pt-1' direction="left" >
+                        This Year 2023 Our Shop All products <span className='text-primary'>10% Discount</span> & <span className='text-warning'> 30% Cash Back</span>.  Our shop Buy products from.<span className='text-danger'> Our Happy Customar ❤❤</span> .
+                    </marquee>
+                </div>
+
                 <div className="row mt-3 px-3 px-md-0 ">
 
                     {
@@ -48,7 +78,7 @@ const AllProduct = () => {
 
                             <div key={product?._id} className="col-lg-3 col-md-4">
                                 <div className="products-box">
-                                    <img className='w-100' src={product?.image} alt="" />
+                                    <img className='w-100 ' src={product?.image} alt="" />
                                     <div className="products-details">
                                         <div className="p-top d-flex justify-content-between">
                                             <span className="d-block Name" >{product?.name}</span>
@@ -62,7 +92,7 @@ const AllProduct = () => {
                                                 </span>
                                             </div>
                                             <div className="wrapper">
-                                                <span className="cta" >
+                                                <span onClick={() => AddToCard(product)} className="cta" >
                                                     <span className='text-white pointer'>Add to Card</span>
 
                                                 </span>

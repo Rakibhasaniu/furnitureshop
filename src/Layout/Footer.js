@@ -7,8 +7,8 @@ const Footer = () => {
                 <div className="container">
                     <div className="row">
                         <div className="f-content-f">
-                            <a href="#">
-                                <h2>HYDE</h2>
+                            <a href="">
+                                <h2>Furnitures</h2>
                             </a>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, ad. Iure nisi asperiores
                                 laudantium suscipit quisquam tempore quidem minima iusto.</p>
@@ -37,13 +37,13 @@ const Footer = () => {
                             <h3>Following</h3>
                             <p>Follow us on Social Media</p>
                             <a href="#"><i className="fa-brands fa-square-facebook"></i></a>
-                            <a href="#"><i className="fa-brands fa-square-instagram"></i></a>
+                            <a href="#"><i className="fa-brands fa-square-instagram mx-3"></i></a>
                             <a href="#"><i className="fa-brands fa-square-twitter"></i></a>
-                            <a href="#"><i className="fa-brands fa-square-youtube"></i></a>
+                            <a href="#"><i className="fa-brands fa-square-youtube mx-3"></i></a>
                         </div>
                     </div>
                     <div className="copy-right text-center">
-                        <span>All Right reserve by <i className="fa-regular fa-heart"></i> MD ALI</span>
+                        <span>All Right reserve by <i className="fa-regular fa-heart"></i> MD Johirul Islam</span>
                     </div>
                 </div>
             </footer>

@@ -47,7 +47,7 @@ const LogIn = () => {
     }
 
 
-    // console.log(dirtyFields);
+
     const autoSingInGoogle = () => {
         autoGoogleLogin()
             .then(result => {

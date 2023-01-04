@@ -16,7 +16,7 @@ const ServicesAbout = () => {
                             <div className="icon-box">
                                 <i className="fa-regular fa-clock"><FaRandom></FaRandom></i>
                                 <h3>30 Days returns</h3>
-                                <p>If a buyer informs you within 30 days of receipt,<br></br> of the item that they wish to return the item.</p>
+                                <p>If a buyer informs you within 30 days of receipt,<br ></br> of the item that they wish to return the item.</p>
                             </div>
                         </div>
                         <div className="col-lg-3 md-col-4 col-sm-6 col-12">
