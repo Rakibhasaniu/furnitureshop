@@ -5,7 +5,7 @@ import SliderBanner from './Slider Banner/SliderBanner';
 
 const Home = () => {
     return (
-        <div>
+        <div className=''>
             <SliderBanner />
             <ServicesAbout />
             <ServicesCategory />

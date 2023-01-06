@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './SlideBanner.css'
 import AOS from 'aos';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const SliderBanner = () => {
 
@@ -14,7 +15,7 @@ const SliderBanner = () => {
 
     return (
         <>
-            <div className="bannerscetion">
+            <div className="bannerscetion mt-5 mt-md-0 ">
                 <div data-aos="fade-down" data-aos-easing="ease-out-cubic" data-aos-duration="1000" className="">
                     <div id="carouselExampleDark" className="carousel carousel-dark slide" data-bs-ride="carousel">
                         <div className="carousel-indicators">
@@ -24,16 +25,16 @@ const SliderBanner = () => {
                             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
                             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 4"></button>
                         </div>
-                        <div className="carousel-inner">
+                        <div className="carousel-inner" >
                             <div className="carousel-item active img-gradient" data-bs-interval="3000">
-                                <img src="https://cdnb.artstation.com/p/assets/images/images/044/704/757/original/gonzalo-blanco-cabin-02.gif?1640889881" className="slide_img img-fluid" alt="" />
+                                <img src="https://studentprojectguide.com/wp-content/uploads/2019/11/Online-furniture-shop.jpg" className="slide_img img-fluid" alt="" />
                                 <div className="carousel-caption z-50 d-none d-md-block justify-content-center">
-                                    <div className="title to-centers mt-md-center position-relative">
-                                        <h1 className='text-white px-md-5 text-uppercase z-50 '>best furniture brand in bangladesh <br />
+                                    <div className="title to-centers mt-md-center position-relative ">
+                                        <h1 className='text-white text-center px-md-5 text-uppercase z-50 '>Furniture<span className='text-ss'> Collection Zoon</span>  <span className=''> 2023</span><br />
                                         </h1>
-                                        <p className='text-white text-start small-text px-6'>Elegance, comfort, versatility and quality are signature Flexform values. Flexform is Sleek lines, Comfort and Functionality. Timeless Elegance. Unrivaled Comfort. Understated Elegance. Contemporary Design. Superior Materials. Design</p>
+                                        <div className="px-lg-5"> <p className='text-white text-start small-text px-lg--6 text-center '>Elegance, comhtmlFort, versatility and quality are signature FlexFor values. FlexFor is Sleek lines, ComhtmlFort and Functionality. Timeless Elegance. Unrivaled ComhtmlFort. Understated Elegance. Contemporary Design. Superior Materials. Design</p></div>
                                         <br />
-                                        <button data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="5000" className="glow-on-hover" type="button">SHOP NOW</button>
+                                        <Link to={`/allProduct`} >  <button data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="5000" className="glow-on-hover" type="button">SHOP NOW</button></Link>
                                     </div>
                                 </div>
                                 <div className="carousel-caption z-50 d-grid d-md-none justify-content-center smTitle">
@@ -43,7 +44,7 @@ const SliderBanner = () => {
 
                                         <br />
                                         <br />
-                                        <button className="glow-on-hover" type="button">SHOP NOW</button>
+                                        <Link to={`/allProduct`}><button className="glow-on-hover" type="button">SHOP NOW</button></Link>
                                     </div>
                                 </div>
 

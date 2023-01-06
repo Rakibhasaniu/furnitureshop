@@ -1,20 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './ProductDetails.css'
 import { useLoaderData, useNavigate } from 'react-router';
 import img1 from '../../../Assent/Background Image/Bad2.jpg'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../AuthContext/UserContext';
+import { toast } from 'react-toastify';
 
 const DetailsProduct = () => {
-
+    const { user } = useContext(AuthContext);
     const navigate = useNavigate()
 
     const ProductDetails = useLoaderData();
-    console.log(ProductDetails)
+
 
     const [products, setData] = useState();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/Detail_product/${ProductDetails?.cetagory}`)
+        fetch(`https://furniture-collections-server-site.vercel.app/Detail_product/${ProductDetails?.cetagory}`)
             .then(res => res.json())
             .then(data => {
                 setData(data)
@@ -22,16 +24,51 @@ const DetailsProduct = () => {
     }, [])
 
 
+    //=============MongoDb post Add to Card==========================
+    const AddToCard = (product) => {
+
+        const cardProduct = {
+            "name": product?.name,
+            "img": product?.image,
+            "Prices": product?.price,
+            "email": user?.email,
+            "Paragrap": product?.Details
+        }
+
+        fetch(`https://furniture-collections-server-site.vercel.app/addCard`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+
+            },
+            body: JSON.stringify(cardProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data?.acknowledged) {
+
+                    toast.success('Add to Card Lisht', data)
+                }
+
+
+            })
+
+    }
+
+
     function refreshPage() {
         window.location.reload();
     }
 
     // console.log(products);
-    const Reloade = () => {
-        navigate('/payment')
-        refreshPage()
+    const Reloade = (ProductDetails) => {
+        refreshPage2()
+
     }
 
+    function refreshPage2() {
+        navigate(`/payment/${ProductDetails?._id}`)
+    }
 
     return (
         <>
@@ -53,7 +90,7 @@ const DetailsProduct = () => {
                                 <div className="d-flex justify-content-between">
                                     <button className='btn btn-outline-info py-2 px-5 detailsbtn' data-bs-toggle="modal" data-bs-target="#staticBackdrop">Buy Now</button>
 
-                                    <button className='btn btn-outline-info py-2 px-5 detailsbtn'>Add To Card</button>
+                                    <button onClick={() => AddToCard(ProductDetails)} className='btn btn-outline-info py-2 px-5 detailsbtn'>Add To Card</button>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +119,7 @@ const DetailsProduct = () => {
                             </div>
                             <div className="modal-footer d-flex justify-content-between">
                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button onClick={Reloade} type="button" className="btn btn-primary">Get Payment</button>
+                                <Link to={`/payment/${ProductDetails?._id}`} type="button" className="btn btn-primary" data-bs-dismiss="modal">  <button onClick={() => Reloade(ProductDetails)} type="button" className="btn btn-primary">  Get Payment  </button></Link>
                             </div>
                         </div>
                     </div>

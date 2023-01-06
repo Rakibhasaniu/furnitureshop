@@ -214,7 +214,13 @@ a {
         height: 40px !important;
         position: absolute !important;
         left: 200px !important;
-        bottom: 30px !important;
+        bottom: -30px !important;
+    }
+
+    #responsiveText {
+        font-size: 13px !important;
+        /* margin-top: 10px !important; */
+        padding-top: 8px;
     }
 
 
@@ -224,7 +230,7 @@ a {
 .description {
     width: 100% !important;
     height: 60vh;
-    padding-left: 50px;
+    /* padding-left: 50px; */
     background: url('../../../Assent/img/bg2.jpg') no-repeat;
     background-position: top center;
     background-size: cover;

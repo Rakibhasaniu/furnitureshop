@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './Pement.css'
 
 const Pement = () => {
+
+    const paymentProduct = useLoaderData()
+
     const navigate = useNavigate()
 
     const ConfirmPayment = () => {
@@ -11,6 +14,8 @@ const Pement = () => {
         navigate('/')
     }
 
+
+    console.log(paymentProduct);
     return (
         <>
             <div className="Payment py-0 pt-4 ">
@@ -30,17 +35,17 @@ const Pement = () => {
                                         <div className="card-body">
                                             <h5 className="card-title text-center py-2">Bkash Payments</h5>
                                             <p className="card-text">
-                                                <form>
-                                                    <div className="form-group">
-                                                        <label for="card-number ">Phone Number</label>
-                                                        <input type="text" className="form-control " id="card-number" placeholder="Enter Phone number" />
+                                                <htmlFor>
+                                                    <div className="For-group">
+                                                        <label htmlFor="card-number ">Phone Number</label>
+                                                        <input type="text" className="For-control " id="card-number" placeholder="Enter Phone number" />
                                                     </div>
 
-                                                    <div className="form-group mt-2">
-                                                        <label for="cvv py-1">Total Amount</label>
-                                                        <input type="text" defaultValue={'$100.00'} disabled className="form-control" id="cvv" placeholder="total amount" />
+                                                    <div className="For-group mt-2">
+                                                        <label htmlFor="cvv py-1">Total Amount</label>
+                                                        <input type="text" defaultValue={paymentProduct?.price} disabled className="For-control text-primary text-bold" id="cvv" placeholder="total amount" />
                                                     </div>
-                                                </form>
+                                                </htmlFor>
                                             </p>
                                             <div className="d-flex justify-content-center">
                                                 <button type="submit" className="btn btn-primary bg-primary text-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Submit</button>
@@ -63,14 +68,14 @@ const Pement = () => {
                                             <h5 className="card-title text-center py-2">Nogat Payments</h5>
                                             <p className="card-text">
                                                 <form>
-                                                    <div className="form-group">
-                                                        <label for="card-number ">Phone Number</label>
-                                                        <input type="text" className="form-control " id="card-number" placeholder="Enter Phone number" />
+                                                    <div className="For-group">
+                                                        <label htmlFor="card-number ">Phone Number</label>
+                                                        <input type="text" className="For-control " id="card-number" placeholder="Enter Phone number" />
                                                     </div>
 
-                                                    <div className="form-group mt-2">
-                                                        <label for="cvv py-1">Total Amount</label>
-                                                        <input type="text" defaultValue={'$100.00'} disabled className="form-control" id="cvv" placeholder="total amount" />
+                                                    <div className="For-group mt-2">
+                                                        <label htmlFor="cvv py-1">Total Amount</label>
+                                                        <input type="text" defaultValue={paymentProduct?.price} disabled className="For-control text-primary text-bold" id="cvv" placeholder="total amount" />
                                                     </div>
                                                 </form>
                                             </p>
@@ -95,14 +100,14 @@ const Pement = () => {
                                             <h5 className="card-title text-center py-2">Rocket Payments</h5>
                                             <p className="card-text">
                                                 <form>
-                                                    <div className="form-group">
-                                                        <label for="card-number ">Phone Number</label>
-                                                        <input type="text" className="form-control " id="card-number" placeholder="Enter Phone number" />
+                                                    <div className="For-group">
+                                                        <label htmlFor="card-number ">Phone Number</label>
+                                                        <input type="text" className="For-control " id="card-number" placeholder="Enter Phone number" />
                                                     </div>
 
-                                                    <div className="form-group mt-2">
-                                                        <label for="cvv py-1">Total Amount</label>
-                                                        <input type="text" defaultValue={'$100.00'} disabled className="form-control" id="cvv" placeholder="total amount" />
+                                                    <div className="For-group mt-2">
+                                                        <label htmlFor="cvv py-1">Total Amount</label>
+                                                        <input type="text" defaultValue={paymentProduct?.price} disabled className="For-control text-primary text-bold" id="cvv" placeholder="total amount" />
                                                     </div>
                                                 </form>
                                             </p>
@@ -128,11 +133,11 @@ const Pement = () => {
                                             <img src="https://www.freepnglogos.com/uploads/visa-logo-download-png-21.png" alt="" />
                                         </div>
                                         <div className="number">
-                                            <label className="fw-bold" for="">**** **** **** 1060</label>
+                                            <label className="fw-bold" htmlFor="">**** **** **** 1060</label>
                                         </div>
                                         <div className="d-flex align-items-center justify-content-between">
                                             <small><span className="fw-bold">Expiry date:</span><span>10/16</span></small>
-                                            <small><span className="fw-bold">Name:</span><span>Kumar</span></small>
+                                            <small><span className="fw-bold">Name:</span><span>Md.Johirul</span>Islam</small>
                                         </div>
                                     </div>
                                 </div>
@@ -147,7 +152,7 @@ const Pement = () => {
                                         </div>
                                         <div className="d-flex align-items-center justify-content-between">
                                             <small><span className="fw-bold">Expiry date:</span><span>10/16</span></small>
-                                            <small><span className="fw-bold">Name:</span><span>Kumar</span></small>
+                                            <small><span className="fw-bold">Name:</span><span>Johirul</span></small>
                                         </div>
                                     </div>
                                 </div>
@@ -173,10 +178,9 @@ const Pement = () => {
                                                 <div className="row">
                                                     <div className="col-8">
                                                         <p className="h4 mb-0">Summary</p>
-                                                        <p className="mb-0"><span className="fw-bold">Product:</span><span className="c-green">: Name of
-                                                            product</span></p>
+                                                        <p className="mb-0"><span className="fw-bold">Product:</span><span className="c-green">: {paymentProduct?.name}</span></p>
                                                         <p className="mb-0"><span className="fw-bold">Price:</span><span
-                                                            className="c-green">:$452.90</span></p>
+                                                            className="c-green">:{paymentProduct?.price}</span></p>
                                                         <p className="mb-0"></p>
                                                     </div>
                                                 </div>
@@ -199,46 +203,45 @@ const Pement = () => {
                                                 <div className="row">
                                                     <div className="col-lg-5 mb-lg-0 mb-3">
                                                         <p className="h4 mb-0">Summary</p>
-                                                        <p className="mb-0"><span className="fw-bold">Product:</span><span className="c-green">: Name of
-                                                            product</span>
+                                                        <p className="mb-0"><span className="fw-bold">Product :</span><span className="c-green"> {paymentProduct?.name}</span>
                                                         </p>
                                                         <p className="mb-0">
                                                             <span className="fw-bold">Price:</span>
-                                                            <span className="c-green">:$452.90</span>
+                                                            <span className="c-green"> {paymentProduct?.price}</span>
                                                         </p>
                                                         <p className="mb-0"></p>
                                                     </div>
                                                     <div className="col-lg-7">
-                                                        <form action="" className="form">
+                                                        <form action="" className="For">
                                                             <div className="row">
                                                                 <div className="col-12">
-                                                                    <div className="form__div">
-                                                                        <input type="text" className="form-control" placeholder=" " />
-                                                                        <label for="" className="form__label">Card Number</label>
+                                                                    <div className="For__div">
+                                                                        <input type="text" className="For-control" placeholder=" " />
+                                                                        <label htmlFor="" className="For__label">Card Number</label>
                                                                     </div>
                                                                 </div>
 
                                                                 <div className="col-6">
-                                                                    <div className="form__div">
-                                                                        <input type="text" className="form-control" placeholder=" " />
-                                                                        <label for="" className="form__label">MM / yy</label>
+                                                                    <div className="For__div">
+                                                                        <input type="text" className="For-control" placeholder=" " />
+                                                                        <label htmlFor="" className="For__label">MM / yy</label>
                                                                     </div>
                                                                 </div>
 
                                                                 <div className="col-6">
-                                                                    <div className="form__div">
-                                                                        <input type="password" className="form-control" placeholder=" " />
-                                                                        <label for="" className="form__label">cvv code</label>
+                                                                    <div className="For__div">
+                                                                        <input type="password" className="For-control" placeholder=" " />
+                                                                        <label htmlFor="" className="For__label">cvv code</label>
                                                                     </div>
                                                                 </div>
                                                                 <div className="col-12">
-                                                                    <div className="form__div">
-                                                                        <input type="text" className="form-control" placeholder=" " />
-                                                                        <label for="" className="form__label">name on the card</label>
+                                                                    <div className="For__div">
+                                                                        <input type="text" className="For-control" placeholder=" " />
+                                                                        <label htmlFor="" className="For__label">name on the card</label>
                                                                     </div>
                                                                 </div>
                                                                 <div className="col-12">
-                                                                    <div className="btn btn-primary bg-primary text-white w-100">Sumbit</div>
+                                                                    <div onClick={ConfirmPayment} className="btn btn-primary bg-primary text-white w-100">Sumbit</div>
                                                                 </div>
                                                             </div>
                                                         </form>
@@ -249,7 +252,7 @@ const Pement = () => {
                                     </div>
                                 </div>
                                 <div className="col-12">
-                                    <div className="btn btn-primary payment">
+                                    <div onClick={ConfirmPayment} className="btn btn-primary payment">
                                         Make Payment
                                     </div>
                                 </div>
@@ -260,31 +263,35 @@ const Pement = () => {
 
                 </div>
 
+
                 {/* =================modal=============================== */}
 
                 <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content  pb-5">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="staticBackdropLabel">Bkash Payments</h5>
+                                <h5 className="modal-title" id="staticBackdropLabel">{paymentProduct?.price} Payments</h5>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="card-body  p-2">
 
-                                <p className="card-text">
+                                <div className="card-text d-flex justify-content-center ">
                                     <form>
-                                        <div className="form-group">
+                                        <div className="For-group mv-3 w-full d-flex justify-content-center">
+                                            <img className='w-75 mx-auto rounded-circle' src={paymentProduct?.image} alt="" />
+                                        </div>
+                                        <div className="For-group mt-2 w-full mx-auto">
                                             <h5 className='text-center'>Verify Code</h5>
-                                            <input type="text" className="form-control w-75 mx-auto" id="card-number" placeholder="Enter Phone number" />
+                                            <input type="text" className="For-control w-75 mx-auto d-flex justify-content-center" id="card-number" placeholder="verifly code" required />
                                         </div>
 
-                                        <div className="form-group mt-2">
-                                            <h5 className='text-center'>Bkash Pin</h5>
-                                            <input type="text" className="form-control w-75 mx-auto" id="pin" placeholder="Bkash Pin" />
+                                        <div className="For-group mt-2 w-full mx-auto justify-content-center">
+                                            <h5 className='text-center'>Account Pin</h5>
+                                            <input type="number" className="For-control w-75 mx-auto d-flex justify-content-center" id="pin" placeholder="Pin" required />
                                         </div>
                                     </form>
-                                </p>
-                                <div className="d-flex justify-content-center">
+                                </div>
+                                <div className="d-flex justify-content-center mt-3">
                                     <button onClick={ConfirmPayment} type="submit" className="btn btn-primary bg-primary text-white w-75 mx-auto" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Confirmed</button>
                                 </div>
                             </div>

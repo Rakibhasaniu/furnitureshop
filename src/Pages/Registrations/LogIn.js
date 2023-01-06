@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+
 import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -7,7 +8,8 @@ import { AuthContext } from '../../AuthContext/UserContext';
 
 const LogIn = () => {
     const { register, formState: { errors, isDirty, dirtyFields }, handleSubmit } = useForm({ mode: "onChange", defaultValues: { password: '' } });
-    const { user, singInUser, emailVerification, autoGoogleLogin, forGetPass } = useContext(AuthContext);
+
+    const { user, singInUser, emailVerification, autoGoogleLogin, htmlForGetPass } = useContext(AuthContext);
     const [userEmail, setUserEmail] = useState('')
 
     //location part 
@@ -33,9 +35,9 @@ const LogIn = () => {
 
     //reste password email notification 
     const restePasswords = () => {
-        console.log('forget password', userEmail);
+        console.log('htmlForget password', userEmail);
         if (userEmail) {
-            forGetPass(userEmail)
+            htmlForGetPass(userEmail)
                 .then(() => {
                     toast.success("please chack you email or setup password .")
                 }).catch(err => {
@@ -67,7 +69,7 @@ const LogIn = () => {
                 <div className="wrapperss ">
                     <div className='d-block'>
                         <div className="logoss">
-                            <img type='formFile' src="http://localhost:3000/static/media/logo.186730c98810fd2c5d6e.gif" alt="" />
+                            <img type='ForFile' src="http://localhost:3000/static/media/logo.186730c98810fd2c5d6e.gif" alt="" />
 
                         </div>
                         <div className="text-center mt-4 name">
@@ -76,7 +78,7 @@ const LogIn = () => {
 
                         <form onSubmit={handleSubmit(onSubmit)} className="p-3 mt-3">
 
-                            <div className="form-field d-flex align-items-center">
+                            <div className="For-field d-flex align-items-center">
                                 <span className="far fa-user"></span>
                                 <input type="email" name="email"
                                     {...register("email",
@@ -87,7 +89,7 @@ const LogIn = () => {
                                     )}
                                     id="userEmail" placeholder="Username" required />
                             </div>
-                            <div className="form-field d-flex align-items-center">
+                            <div className="For-field d-flex align-items-center">
                                 <span className="fas fa-key"></span>
                                 <input type="password" name="password"
                                     {...register("password",
@@ -100,7 +102,7 @@ const LogIn = () => {
                                     id="pwd" placeholder="Password" required />
                             </div>
                             <div className="text-center fs-6">
-                                <a href="#">Forget password?</a>
+                                <a href="#">htmlForget password?</a>
                             </div>
 
                             {/* --------error massage end---------- */}

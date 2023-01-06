@@ -13,6 +13,7 @@ import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 import About from '../About/About';
+import MessageForm from '../../../Components/MessageForm';
 
 const ServicesCategory = () => {
     return (
@@ -21,22 +22,22 @@ const ServicesCategory = () => {
             <div className="scetion py-4">
                 <h1 className="text-center Larg_Text py-2">Cetagorys products</h1>
                 <h6 className="text-center Small_Text px-5 pb-4">Classic furniture, lighting and decoration collections. <br />
-                    Proudly designed for everyday living.</h6>
+                    Proudly designed htmlFor everyday living.</h6>
 
-                <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="true">
+                <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
-                    <div className="carousel-inner  ml-5">
-                        <div className="carousel-item active ">
-                            <div className="row container-fluid d-flex justify-content-center pl-5">
+                    <div className="carousel-inner ml-5 " >
+                        <div className="carousel-item active" data-bs-interval="2500">
+                            <div className="row container-fluid d-flex justify-content-center pl-5 w-full mx-auto">
                                 <div className="col-lg-4 col-md-6 col-12 mb-4">
                                     <div className="d-block me-1">
                                         <img className='productImg' src={Bad} alt="" />
                                         <div className="d-flex justify-content-between mt-2 mx-1">
-                                            <h5 className='product_name'>Bed Collections</h5>
+                                            <h5 id='responsiveText' className='product_name  '>Bed Collections</h5>
                                             <Link to={'/cetagory-data/bed'} className='product_details'>Details</Link>
                                         </div>
                                     </div>
@@ -46,7 +47,7 @@ const ServicesCategory = () => {
                                     <div className="d-block me-1">
                                         <img className='productImg' src={Sofa} alt="" />
                                         <div className="d-flex justify-content-between mt-2 mx-1">
-                                            <h5 className='product_name'>Sofa Collections</h5>
+                                            <h5 id='responsiveText' className='product_name '>Sofa Collections</h5>
                                             <Link to={'/cetagory-data/sofa'} className='product_details'>Details</Link>
                                         </div>
                                     </div>
@@ -56,7 +57,7 @@ const ServicesCategory = () => {
                                     <div className="d-block me-1">
                                         <img className='productImg' src={Gamming} alt="" />
                                         <div className="d-flex justify-content-between mt-2 mx-1">
-                                            <h5 className='product_name'>Gamming Collections</h5>
+                                            <h5 id='responsiveText' className='product_name '>Gamming Collections</h5>
                                             <Link to={'/cetagory-data/gaming'} className='product_details'>Details</Link>
                                         </div>
                                     </div>
@@ -64,13 +65,13 @@ const ServicesCategory = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="carousel-item  ">
+                        <div className="carousel-item" data-bs-interval="2500">
                             <div className="row container-fluid d-flex justify-content-center pl-5">
                                 <div className="col-lg-4 col-md-6 col-12 mb-4">
                                     <div className="d-block me-1">
                                         <img className='productImg' src={Dyning} alt="" />
                                         <div className="d-flex justify-content-between mt-2 mx-1">
-                                            <h5 className='product_name'>Dining Collections</h5>
+                                            <h5 id='responsiveText' className='product_name '>Dining Collections</h5>
                                             <Link to={'/cetagory-data/dining'} className='product_details'>Details</Link>
                                         </div>
                                     </div>
@@ -80,7 +81,7 @@ const ServicesCategory = () => {
                                     <div className="d-block me-1">
                                         <img className='productImg' src={Almary} alt="" />
                                         <div className="d-flex justify-content-between mt-2 mx-1">
-                                            <h5 className='product_name'>Almary Collections</h5>
+                                            <h5 id='responsiveText' className='product_name '>Almary Collections</h5>
                                             <Link to={'/cetagory-data/almary'} className='product_details'>Details</Link>
                                         </div>
                                     </div>
@@ -90,7 +91,7 @@ const ServicesCategory = () => {
                                     <div className="d-block me-1">
                                         <img className='productImg' src={Dolpon} alt="" />
                                         <div className="d-flex justify-content-between mt-2 mx-1">
-                                            <h5 className='product_name'>Mirror Collections</h5>
+                                            <h5 id='responsiveText' className='product_name '>Mirror Collections</h5>
                                             <Link to={'/cetagory-data/mirror'} className='product_details'>Details</Link>
                                         </div>
                                     </div>
@@ -114,18 +115,18 @@ const ServicesCategory = () => {
             </div>
 
             {/* ========================= Future Furniture collection====================== */}
-            <section className="description ">
+            <section className="description mt-5 px-2">
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-6 col-12">
                             <div className="blank"></div>
                         </div>
                         <div className="col-lg-6 col-12 d-flex ">
-                            <div className="d-content py-sm-5">
-                                <h1>New furniture
+                            <div className="d-content py-sm-5 w-full">
+                                <h1>Upcoming furniture
                                     collection</h1>
                                 <p className='py-3 px-1'>Typically, furniture from the modernist tradition is constructed from natural materials such as wood, leather, and linen. Many pieces also incorporate metal into their designs, helping modern furniture present a visually “lighter” and less cluttered appearance when compared to more traditional styles.</p>
-                                <button className="btn btn-primary py-3 fw-semibold ">SHOW FURNITURE</button>
+                                <Link to={`upcoming`} className="btn btn-primary py-3 fw-semibold ">SHOW FURNITURE</Link>
                             </div>
                         </div>
                     </div>
@@ -151,7 +152,7 @@ const ServicesCategory = () => {
                                 <div className="products-details">
                                     <div className="px-2 d-flex justify-content-between pt-2  justify-content-between pt-2">
                                         <h4 className='texts'>Home Service 7</h4>
-                                        <button className='service_7'> Details</button>
+                                        <button className='service_7' data-bs-toggle="modal" data-bs-target="#staticBackdrop222"> Details</button>
                                     </div>
                                 </div>
                             </div>
@@ -169,7 +170,7 @@ const ServicesCategory = () => {
                                 <div className="products-details">
                                     <div className="px-2 d-flex justify-content-between pt-2  justify-content-between pt-2">
                                         <h4 className='texts'>Home Service 7</h4>
-                                        <button className='service_7'> Details</button>
+                                        <button className='service_7' data-bs-toggle="modal" data-bs-target="#staticBackdrop222"> Details</button>
                                     </div>
                                 </div>
                             </div>
@@ -186,8 +187,27 @@ const ServicesCategory = () => {
 
                                 <div className="products-details">
                                     <div className="px-2 d-flex justify-content-between pt-2  justify-content-between pt-2">
-                                        <h4 className='texts'>Home Service 10</h4>
-                                        <button className='service_7'>Details</button>
+                                        <h4 className='texts'>Home Service 12</h4>
+                                        <button className='service_7' data-bs-toggle="modal" data-bs-target="#staticBackdrop222"> Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* ==modal== */}
+                            <div class="modal fade" id="staticBackdrop222" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h5>This Serves have already Booking.</h5>
+                                            <p>Thank you sir.</p>
+                                        </div>
+                                        <div class="modal-footer">
+
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -197,8 +217,57 @@ const ServicesCategory = () => {
                     </div>
                 </div>
             </section>
-            {/* ==========About section========== */}
+            {/* ==========Messaging section========== */}
+            <section
+                // data-aos="fade-up"
+                // data-aos-anchor-placement="top-center"
+                // data-aos-duration="1000"
+                className="my-4">
+                <h1 className="text-center Larg_Text pt-2">Any InForation Collection Our Furniture Zoon</h1>
+                <h6 className="text-center Small_Text px-5 pb-4">Please Write This From Message Field. <br></br> What's your Problem ?</h6>
+                <form className='' action="https://getFor.io/f/346003ba-86ef-4b17-9fc1-6ebd93a3af1a" method="POST">
 
+
+                    <div className="row mx-md-3 mx-2">
+
+                        <div className="col-lg-12 col-md-12 ">
+                            <div className="Fore2 p-5 rounded-4 mx-auto w-full  mx-auto">
+                                <p className=" text-uppercase text-center text-white">Send Message Here</p>
+
+
+                                <div className="block">
+                                    <input
+                                        type="text" name="name"
+                                        id='name'
+                                        placeholder='Your full Name'
+                                        className="For-group pb-2 rounded-3 px-1 pt-2 w-100 justify-center flex mx-auto"
+                                        data-temp-mail-org='0'
+                                        required />
+
+                                </div>
+                                <div className="block py-3">
+                                    <input type="email" name="email" id='email' placeholder="Your Email" className="For-group w-100 justify-center flex mx-auto For-group pb-2 rounded-3 px-1 pt-2" data-temp-mail-org='0' required />
+                                </div>
+                                <div className="block ">
+                                    <input name='phone' id='phone' type="number" placeholder="Your Phone Number" className="For-group w-100 justify-center flex mx-auto For-group pb-2 rounded-3 px-1 pt-2" data-temp-mail-org='0' required />
+                                </div>
+                                <div className="block">
+                                    <textarea type="text" name="message" className="textarea textarea-info For-group pb-4 px-1 pt-1  w-100 justify-center flex mx-auto mt-3" placeholder="Message Write Here"></textarea>
+                                </div>
+                                <div className="d-flex justify-content-center my-3 ">
+                                    <button type="submit" className='w-100 mx-auto py-2 btn btn-primary' >Submite</button>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </form>
+            </section>
 
             <section className="Our_client pb-2 pt-5">
                 <h1 className="text-center Larg_Text py-0">Our Best Clients</h1>

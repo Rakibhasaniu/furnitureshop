@@ -14,29 +14,29 @@ const ServicesAbout = () => {
                     <div className="row  d-flex justify-content-center">
                         <div className="col-lg-3 md-col-4 col-sm-6 col-12">
                             <div className="icon-box">
-                                <i className="fa-regular fa-clock"><FaRandom></FaRandom></i>
+                                <i className="fa-regular"><FaRandom></FaRandom></i>
                                 <h3>30 Days returns</h3>
-                                <p>If a buyer informs you within 30 days of receipt,<br ></br> of the item that they wish to return the item.</p>
+                                <p>If a buyer inFors you within 30 days of receipt,<br ></br> of the item that they wish to return the item.</p>
                             </div>
                         </div>
                         <div className="col-lg-3 md-col-4 col-sm-6 col-12">
                             <div className="icon-box box">
-                                <i className="fa-regular fa-clock"> <FaShippingFast></FaShippingFast></i>
+                                <i className="fa-regular"> <FaShippingFast></FaShippingFast></i>
                                 <h3>Same day delivery</h3>
                                 <p>Same-day shipping means that a customer's order will ship out on the same day the order is placed.</p>
                             </div>
                         </div>
                         <div className="col-lg-3 md-col-4 col-sm-6 col-12">
                             <div className="icon-box box">
-                                <i className="fa-regular fa-clock"><FaShoppingCart /></i>
+                                <i className="fa-regular"><FaShoppingCart /></i>
                                 <h3>Secure checkout</h3>
-                                <p> Сheckout is a process for the payment of a specific product or service your booking porduct</p>
+                                <p> Сheckout is a process htmlFor the payment of a specific product or service your booking porduct</p>
                             </div>
                         </div>
 
                         <div className="col-lg-3 md-col-4 col-sm-6 col-12">
                             <div className="icon-box box">
-                                <i className="fa-regular fa-clock"><FaRoute /></i>
+                                <i className="fa-regular"><FaRoute /></i>
                                 <h3>Fast customer support</h3>
                                 <p>Customer support is that customer support teams support a product,service teams provide service.</p>
                             </div>

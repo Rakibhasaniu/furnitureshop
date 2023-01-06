@@ -46,15 +46,15 @@ font-family: 'PT Sans Narrow', sans-serif; */
 
 .Loding {
     width: 100% !important;
-    height: 90vh !important;
+    height: 100vh !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
 }
 
 .Loding img {
-    width: 8% !important;
-    height: 20% !important;
+    width: 5% !important;
+    height: 12% !important;
 }
 
 @media only screen and (max-width : 650px) {

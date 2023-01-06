@@ -57,7 +57,7 @@
     visibility: hidden;
     opacity: 0;
     transition: .3s;
-    transform: translateY(-10px);
+    transFor: translateY(-10px);
 }
 
 .allProduct .p-bottom span {
@@ -93,13 +93,13 @@
 }
 
 .allProduct .products-box:hover {
-    transform: scale(1.01);
+    transFor: scale(1.01);
 
 }
 
 /* ---main hover effect------------ */
 .allProduct .products-box:hover .p-top {
-    transform: translateY(-20px);
+    transFor: translateY(-20px);
 }
 
 .allProduct .products-box:hover .p-bottom {
@@ -113,4 +113,9 @@
     .collections2022 {
         font-size: 15px !important;
     }
+}
+
+.lodding {
+    width: 100%;
+    height: 100vh !important;
 }

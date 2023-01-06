@@ -1,6 +1,7 @@
 .AddToCard {
     padding-top: 65px;
     padding-bottom: 5%;
+
 }
 
 .closess {
@@ -44,10 +45,12 @@
     font-size: 20px;
     cursor: pointer;
     color: red;
+    transition: all 2 ease-in-out !important;
 }
 
 .closeCard:hover {
     color: rgb(255, 94, 94);
+    transFor: scale(1.5);
 
 }
 
@@ -85,4 +88,8 @@
     position: fixed;
     top: 20;
     border-radius: 10px;
+}
+
+.hightss {
+    height: 100vh !important;
 }

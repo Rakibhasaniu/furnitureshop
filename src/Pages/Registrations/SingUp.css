@@ -31,8 +31,9 @@
 }
 
 .logoss {
-    width: 80px;
+    width: 80px !important;
     margin: auto;
+
 }
 
 .logoss img {
@@ -54,7 +55,7 @@
     color: #555;
 }
 
-.wrapperss .form-field input {
+.wrapperss .For-field input {
     width: 100%;
     display: block;
     border: none;
@@ -66,14 +67,14 @@
     /* border: 1px solid red; */
 }
 
-.wrapperss .form-field {
+.wrapperss .For-field {
     padding-left: 10px;
     margin-bottom: 20px;
     border-radius: 20px;
     box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
 }
 
-.wrapperss .form-field .fas {
+.wrapperss .For-field .fas {
     color: #555;
 }
 
@@ -131,7 +132,7 @@
 
 }
 
-.form-control {
+.For-control {
     border: 2px solid rgb(1, 152, 207) !important;
     text-align: center !important;
 }

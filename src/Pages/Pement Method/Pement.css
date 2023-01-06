@@ -101,13 +101,13 @@
 }
 
 
-.Payment .form__div {
+.Payment .For__div {
     height: 50px;
     position: relative;
     margin-bottom: 24px;
 }
 
-.Payment .form-control {
+.Payment .For-control {
     width: 100%;
     height: 45px;
     font-size: 14px;
@@ -120,7 +120,7 @@
     box-shadow: none;
 }
 
-.Payment .form__label {
+.Payment .For__label {
     position: absolute;
     left: 16px;
     top: 10px;
@@ -131,7 +131,7 @@
     text-transform: uppercase;
 }
 
-.Payment .form-control:focus+.form__label {
+.Payment .For-control:focus+.For__label {
     top: -8px;
     left: 12px;
     color: #1A73E8;
@@ -140,7 +140,7 @@
     z-index: 10;
 }
 
-.Payment .form-control:not(:placeholder-shown).form-control:not(:focus)+.form__label {
+.Payment .For-control:not(:placeholder-shown).For-control:not(:focus)+.For__label {
     top: -8px;
     left: 12px;
     font-size: 12px;
@@ -148,7 +148,7 @@
     z-index: 10;
 }
 
-.Payment .form-control:focus {
+.Payment .For-control:focus {
     border: 1.5px solid #1A73E8;
     box-shadow: none;
 }

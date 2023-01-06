@@ -1,17 +1,46 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './AllProduct.css'
-import Sofa from '../../../Assent/img/asset 8.jpeg'
 import { useQuery } from '@tanstack/react-query';
 import { async } from '@firebase/util';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FaList } from 'react-icons/fa';
+import { AuthContext } from '../../../AuthContext/UserContext';
 
 const AllProduct = () => {
 
-    const url = `http://localhost:5000/all_product`;
 
-    const { data: products = [], isLoading } = useQuery({
+    const { user } = useContext(AuthContext);
+
+    // card lisht length full message
+    const urls = `https://furniture-collections-server-site.vercel.app/allCard`;
+    const [loding, setLoding] = useState(true)
+    const [product, setDatas] = useState()
+    // const { data: product = [] } = useQuery({
+    //     queryKey: ['product'],
+    //     queryFn: async () => {
+    //         try {
+    //             const res = await fetch(urls);
+    //             const data = await res.json();
+    //             return data;
+    //         } catch (err) {
+    //             console.log(err);
+    //         }
+    //     }
+    // })
+    useEffect(() => {
+        fetch(urls)
+            .then(res => res.json())
+            .then(data => {
+                setLoding(false)
+                setDatas(data)
+            })
+    }, [])
+
+
+    const url = `https://furniture-collections-server-site.vercel.app/all_product`;
+
+    const { data: products = [], isLoading, refetch } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
             try {
@@ -25,28 +54,40 @@ const AllProduct = () => {
     })
 
     if (isLoading) {
-        <div>
+        return <div>
             <div className="Loding">
                 <img src='https://static.spotapps.co/assets/widgets/loading.gif' alt="" />
             </div>
         </div>
     }
+
     //=============MongoDb post Add to Card==========================
     const AddToCard = (product) => {
 
-        fetch(`http://localhost:5000/addCard`, {
+        const cardProduct = {
+            "name": product?.name,
+            "image": product?.image,
+            "price": product?.price,
+            "email": user?.email,
+            "Paragrap": product?.Details,
+            "_idd": product?._id
+        }
+
+        fetch(`https://furniture-collections-server-site.vercel.app/addCard`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
 
             },
-            body: JSON.stringify(product)
+            body: JSON.stringify(cardProduct)
         })
             .then(res => res.json())
             .then(data => {
                 if (data?.acknowledged) {
-                    toast.success('Add to Card FaList', data)
+                    refetch()
+                    toast.success('Add to Card Lisht', data)
                 }
+
             })
 
     }
@@ -58,9 +99,9 @@ const AllProduct = () => {
         <>
             <div className="allProduct px-lg-5 d-block">
                 <div className="container-fluid justify-content-between align-items-center d-flex px-lg-5">
-                    <h4 className='collections2022'> <span className='d-none d-md-flex'>Fresh Furniture Collection 2022</span> </h4>
+                    <h4 className='collections2022'> <span className='d-none d-md-flex'>Furniture Collection Zoon 2023</span> </h4>
                     <form className="d-flex w-md-25 ">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <input className="For-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-outline-success" type="submit">Search</button>
                     </form>
 

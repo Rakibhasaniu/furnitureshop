@@ -7,11 +7,11 @@ import { FaAlignLeft, FaBars } from 'react-icons/fa';
 import { AuthContext } from '../AuthContext/UserContext';
 import { toast } from 'react-toastify';
 import AddCard from '../Pages/AddCard/AddCard';
+import { useQuery } from '@tanstack/react-query';
 
 const Navbar = () => {
 
     const { user, logOutUser } = useContext(AuthContext)
-
 
     // user logOut 
     const Logout = () => {
@@ -40,7 +40,7 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className="collapse me-lg-5 navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mx-auto mb-2 mb-lg-0 me-2 pt-3">
+                        <ul className="navbar-nav mx-auto mb-2 mb-lg-0 me-2 pt-1">
                             <li className="nav-item">
                                 <Link to={'/'} className="nav-links" >Home</Link>
                             </li>
@@ -48,10 +48,10 @@ const Navbar = () => {
                                 <Link to={"/allProduct"} className="nav-links">All Product</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to={"/"} className="nav-links">New Product</Link>
+                                <Link to={"/upcoming"} className="nav-links">Upcoming Product</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to={"/"} className="nav-links">Admin Bord</Link>
+                                <Link to={"/admin"} className="nav-links">Admin</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to={"/contact"} className="nav-links">Contact </Link>
@@ -60,8 +60,8 @@ const Navbar = () => {
                             <li className="nav-item" >
                                 <Link to={"/add-Card"} className="nav-links position-relative me-3">
                                     Add Card
-                                    <span class="cardnotification position-absolute start-100 translate-middle badge rounded-pill bg-danger">
-                                        9+
+                                    <span className="cardnotification position-absolute start-100 translate-middle w-50 h-75">
+                                        <img className='w-75 h-100 rounded-circle' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSYT5fgXSfRT0wTgBz1_57x0jSD4MxAT_9zHPcY52rCGgdIpdmYyGr2D9k1RlZAzlEUwI&usqp=CAU" alt="" />
 
                                     </span>
                                 </Link>

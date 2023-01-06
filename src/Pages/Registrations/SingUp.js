@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import './SingUp.css'
-import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
-import { AuthContext } from '../../AuthContext/UserContext';
 import { toast } from 'react-toastify';
+import { AuthContext } from '../../AuthContext/UserContext';
+import { useForm } from "react-hook-form";
 
 const SingUp = () => {
     const { register, formState: { errors, isDirty, dirtyFields }, handleSubmit } = useForm({ mode: "onChange", defaultValues: { password: '' } });
-    const { user, singUpUser, singInUser, forGetPass, userProfile, logOutUser, emailVerification, autoGoogleLogin, loding, } = useContext(AuthContext);
+    const { user, singUpUser, singInUser, htmlForGetPass, userProfile, logOutUser, emailVerification, autoGoogleLogin, loding, } = useContext(AuthContext);
     // ---image bb key--
     const imageHostKey = process.env.REACT_APP_image_apikye;
 
@@ -17,20 +17,20 @@ const SingUp = () => {
     const location = useLocation()
     const prevLocation = location?.state?.from?.pathname || '/';
 
-    // -------------form information ----------------
+    // -------------For inForation ----------------
     const onSubmit = data => {
         const { email, name, password } = data;
         console.log(data)
         // ----set image bb url----
         const images = data.img[0];
-        const formData = new FormData();
-        formData.append('image', images);
+        const ForData = new ForData();
+        ForData.append('image', images);
         const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`
         const url2 = `https://api.imgbb.com/1/upload?key=${imageHostKey}`
         console.log(imageHostKey); //https://api.imgbb.com/1/upload?key
         fetch(url2, {
             method: 'POST',
-            body: formData
+            body: ForData
         })
             .then(res => res.json())
             .then(imageData => {
@@ -41,18 +41,17 @@ const SingUp = () => {
                     singUpUser(email, password)
                         .then(result => {
                             console.log(result?.user);
-                            toast.success('Registration successfully')
+
 
                             userProfile(name, userImage)
                                 .then(result => {
                                     console.log('updat', userImage);
-                                    toast.info('update user profile')
 
                                     emailVerification()
                                         .then(result => {
-                                            toast.success('send email verifiy link to visite')
+
                                             // ---navigate
-                                            // userInformation(name, userImage, email)
+                                            addDatabaseUser(name, userImage, email)
                                         }).catch(err => {
                                             toast.error(err.message)
                                             console.log(err)
@@ -69,51 +68,33 @@ const SingUp = () => {
                 }
             })
 
-
-
-        //user create email or password sing up
-
-        // singUpUser(email, password)
-        //     .then(result => {
-        //         console.log(result?.user);
-        //         toast.success('Registration successfully')
-
-        //         userProfile(name, userImage)
-        //             .then(result => {
-        //                 console.log('updat', userImage);
-        //                 toast.info('update user profile')
-
-        //                 emailVerification()
-        //                     .then(result => {
-        //                         toast.success('send email verifiy link to visite')
-        //                         // ---navigate
-        //                         userInformation(name, userImage, email)
-        //                     }).catch(err => {
-        //                         toast.error(err.message)
-        //                         console.log(err)
-        //                     })
-
-        //             }).catch(err => {
-        //                 toast.error(err.message)
-        //                 console.log(err)
-        //             })
-        //     }).catch(err => {
-        //         toast.error(err.message)
-        //         console.log(err)
-        //     })
-
-
     }
     // Google sing in outo
     const autoSingInGoogle = () => {
         autoGoogleLogin()
             .then(result => {
-                console.log(result?.user?.email);
-                // setLogInUserEmail(result?.user?.email)
-
-                toast.success('User Auto Login With Google !')
+                addDatabaseUser(result?.user?.displayName, result?.user?.photoURL, result?.user?.email)
                 navigat(prevLocation, { replace: true })
-            }).catch(err => console.log(err))
+            }).catch(err => toast.error(err))
+    }
+
+    // set database user inForaions
+    const addDatabaseUser = (name, userImage, email) => {
+        // const role = "admin"
+        const user = { name, userImage, email };
+        fetch(`https://furniture-collections-server-site.vercel.app/users`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                navigat(prevLocation, { replace: true })
+                toast.success('Registration successfully')
+                toast.success('send email verifiy link to visite')
+            }).catch(err => toast.error(err))
     }
 
     return (
@@ -121,21 +102,21 @@ const SingUp = () => {
             <div className="SingUp">
                 <div className="wrapperss">
                     <div className='d-block'>
-                        <div type='formFile' className="logoss">
-                            <img type='formFile' src="https://w7.pngwing.com/pngs/627/693/png-transparent-computer-icons-user-user-icon-thumbnail.png" alt="" />
-                            <input name='img' className="form-control mt-3" type="file"
+                        <div type='ForFile' className="logoss">
+                            <img type='ForFile' src="https://w7.pngwing.com/pngs/627/693/png-transparent-computer-icons-user-user-icon-thumbnail.png" alt="" />
+                            <input name='img' className="For-control mt-3 overflow-hidden w-100 " type="file"
                                 {...register("img",
                                     {
                                         required: "your profile image",
                                     }
-                                )} id="formFile" required />
+                                )} id="ForFile" required />
                         </div>
                         <div className="text-center mt-4 name">
                             User Profile photo
                         </div>
 
                         <form onSubmit={handleSubmit(onSubmit)} className="p-3 mt-3">
-                            <div className="form-field d-flex align-items-center">
+                            <div className="For-field d-flex align-items-center">
                                 <span className="far fa-user"></span>
                                 <input type="text" name="userName"
                                     {...register("userName",
@@ -147,7 +128,7 @@ const SingUp = () => {
                                     id="userName" placeholder="Username" required />
                             </div>
 
-                            <div className="form-field d-flex align-items-center">
+                            <div className="For-field d-flex align-items-center">
                                 <span className="far fa-user"></span>
                                 <input type="email" name="email"
                                     {...register("email",
@@ -158,7 +139,7 @@ const SingUp = () => {
                                     )}
                                     id="userEmail" placeholder="Username" required />
                             </div>
-                            <div className="form-field d-flex align-items-center">
+                            <div className="For-field d-flex align-items-center">
                                 <span className="fas fa-key"></span>
                                 <input type="password" name="password"
                                     {...register("password",

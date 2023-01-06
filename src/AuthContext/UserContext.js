@@ -28,7 +28,7 @@ const UserContext = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
 
     }
-    //user information name image etc
+    //user inForation name image etc
     const userProfile = (name, image) => {
         setLoding(true);
         console.log("privet", image)
@@ -47,7 +47,7 @@ const UserContext = ({ children }) => {
     }
 
     // const password reset email 
-    const forGetPass = (email) => {
+    const htmlForGetPass = (email) => {
         setLoding(true);
         return sendPasswordResetEmail(auth, email)
     }
@@ -66,7 +66,7 @@ const UserContext = ({ children }) => {
         user,
         singUpUser,
         singInUser,
-        forGetPass,
+        htmlForGetPass,
         userProfile,
         logOutUser,
         emailVerification,

@@ -58,11 +58,11 @@ footer .row {
 .f-content a {
     color: #009688;
     font-size: 30px;
-    transform: scale(1);
+    transFor: scale(1);
 }
 
 .f-content i:hover {
-    transform: scale(.9);
+    transFor: scale(.9);
 }
 
 .copy-right {
