@@ -53,15 +53,30 @@ const LogIn = () => {
     const autoSingInGoogle = () => {
         autoGoogleLogin()
             .then(result => {
-                console.log(result?.user?.email);
-                // setLogInUserEmail(result?.user?.email)
-
+                addDatabaseUser(result?.user?.displayName, result?.user?.photoURL, result?.user?.email)
                 toast.success('User Auto Login With Google !')
                 navigat(prevLocation, { replace: true })
             }).catch(err => console.log(err))
     }
 
-
+    // set database user inForaions
+    const addDatabaseUser = (name, userImage, email) => {
+        // const role = "admin"
+        const user = { name, userImage, email };
+        fetch(`https://furniture-collections-server-site.vercel.app/users`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                navigat(prevLocation, { replace: true })
+                toast.success('Registration successfully')
+                toast.success('send email verifiy link to visite')
+            }).catch(err => toast.error(err))
+    }
 
     return (
         <>
@@ -102,7 +117,7 @@ const LogIn = () => {
                                     id="pwd" placeholder="Password" required />
                             </div>
                             <div className="text-center fs-6">
-                                <a href="#">htmlForget password?</a>
+                                <Link to={``} className='forgetpasss' onClick={restePasswords} >Forget password?</Link>
                             </div>
 
                             {/* --------error massage end---------- */}

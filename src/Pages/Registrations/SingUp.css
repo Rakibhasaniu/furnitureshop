@@ -30,6 +30,15 @@
     box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
 }
 
+.forgetpasss {
+    cursor: pointer;
+    color: #000 !important;
+}
+
+.forgetpasss:hover {
+    color: #039BE5 !important;
+}
+
 .logoss {
     width: 80px !important;
     margin: auto;

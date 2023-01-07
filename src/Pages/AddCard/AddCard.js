@@ -8,7 +8,7 @@ import { AuthContext } from '../../AuthContext/UserContext';
 
 const AddCard = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, loding } = useContext(AuthContext);
     const navigate = useNavigate()
 
     const url = `https://furniture-collections-server-site.vercel.app/allCard/${user?.email}`;
@@ -28,7 +28,6 @@ const AddCard = () => {
     })
 
 
-
     // Buy Product
     const [ProductDetails, setProduct] = useState()
     const BuyProduct = (productss) => {
@@ -46,12 +45,13 @@ const AddCard = () => {
 
 
     if (isLoading) {
-        return <div>
+        return <>
             <div className="Loding">
                 <img src='https://static.spotapps.co/assets/widgets/loading.gif' alt="" />
             </div>
-        </div>
+        </>
     }
+
 
 
 

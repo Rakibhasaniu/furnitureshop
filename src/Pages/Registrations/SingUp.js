@@ -10,7 +10,7 @@ const SingUp = () => {
     const { register, formState: { errors, isDirty, dirtyFields }, handleSubmit } = useForm({ mode: "onChange", defaultValues: { password: '' } });
     const { user, singUpUser, singInUser, htmlForGetPass, userProfile, logOutUser, emailVerification, autoGoogleLogin, loding, } = useContext(AuthContext);
     // ---image bb key--
-    const imageHostKey = process.env.REACT_APP_image_apikye;
+    const imageHostKey = process.env.REACT_APP_imageHostKey;
 
     //location part 
     const navigat = useNavigate()
@@ -20,17 +20,17 @@ const SingUp = () => {
     // -------------For inForation ----------------
     const onSubmit = data => {
         const { email, name, password } = data;
-        console.log(data)
+
         // ----set image bb url----
         const images = data.img[0];
-        const ForData = new ForData();
-        ForData.append('image', images);
+        const formData = new FormData();
+        formData.append('image', images);
         const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`
         const url2 = `https://api.imgbb.com/1/upload?key=${imageHostKey}`
-        console.log(imageHostKey); //https://api.imgbb.com/1/upload?key
+        // console.log(imageHostKey); //https://api.imgbb.com/1/upload?key
         fetch(url2, {
             method: 'POST',
-            body: ForData
+            body: formData
         })
             .then(res => res.json())
             .then(imageData => {

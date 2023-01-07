@@ -57,7 +57,7 @@
     visibility: hidden;
     opacity: 0;
     transition: .3s;
-    transFor: translateY(-10px);
+    transform: translateY(-10px);
 }
 
 .allProduct .p-bottom span {
@@ -93,13 +93,13 @@
 }
 
 .allProduct .products-box:hover {
-    transFor: scale(1.01);
+    transform: scale(1.01);
 
 }
 
 /* ---main hover effect------------ */
 .allProduct .products-box:hover .p-top {
-    transFor: translateY(-20px);
+    transform: translateY(-20px);
 }
 
 .allProduct .products-box:hover .p-bottom {

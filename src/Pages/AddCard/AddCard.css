@@ -50,7 +50,7 @@
 
 .closeCard:hover {
     color: rgb(255, 94, 94);
-    transFor: scale(1.5);
+    transform: scale(1.5);
 
 }
 
